@@ -26,35 +26,47 @@ const models = [
   {
     name: "Dr. Ampoful",
     description: "Everyday tasks and UI generation.",
-    image: "/doctor1.png",
+    image: "/doctor.png",
     credit: "Valeria Reverdo on Unsplash",
   },
   {
     name: "Dr. Asare",
     description: "Advanced thinking or reasoning.",
-    image: "/doctor1.png",
+    image: "/doctor.png",
     credit: "Michael Oeser on Unsplash",
   },
   {
     name: "Dr. Aborgeh",
     description: "Open Source model for everyone.",
-    image: "/doctor1.png",
+    image: "/doctor.png",
     credit: "Cherry Laithang on Unsplash",
   },
   {
     name: "Dr. Ponkoh",
     description: "Open Source model for everyone.",
-    image: "/doctor1.png",
+    image: "/doctor.png",
+    credit: "Cherry Laithang on Unsplash",
+  },
+  {
+    name: "Dr. Amankwah",
+    description: "Open Source model for everyone.",
+    image: "/doctor.png",
+    credit: "Cherry Laithang on Unsplash",
+  },
+  {
+    name: "Dr. Andam",
+    description: "Open Source model for everyone.",
+    image: "/doctor.png",
     credit: "Cherry Laithang on Unsplash",
   },
 ];
 
 function Doctors() {
   return (
-    <div id="doctors" className="px-10 w-full">
-      <h1 className="text-2xl font-bold my-5">Explore Our Doctors</h1>
-      <div className="w-fit mb-5">
-        <Menubar className="shadow-xl">
+    <div id="doctors" className="px-10 w-full pb-10">
+      <h1 className="text-4xl font-bold my-5">Explore Our Doctors</h1>
+      <div className="md: w-fit mb-5">
+        <Menubar className="ms-50 shadow-xl scale-130">
           <MenubarMenu>
             <MenubarTrigger className="bg-green-500 text-white">
               All
@@ -81,9 +93,9 @@ function Doctors() {
         </Menubar>
       </div>
       <div className="flex justify-center py-10 w-full">
-        <div className="w-5/7 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="w-6/7 grid grid-cols-1 md:grid-cols-3 md:gap-3 gap-y-3">
           {models.map((model) => (
-            <Card key={model.name} className="w-full">
+            <Card key={model.name} className="w-full md:p-0 pe-70">
               <CardHeader>
                 <Image
                   src={model.image}
@@ -93,13 +105,15 @@ function Doctors() {
                   className="aspect-square w-full rounded-sm object-contain"
                 />
                 <CardTitle>{model.name}</CardTitle>
-                <CardDescription>{model.description}</CardDescription>
+                <CardDescription className="w-full">
+                  {model.description}
+                </CardDescription>
                 {/* <CardAction>
                     <Button variant="link">Sign Up</Button>
                     </CardAction> */}
               </CardHeader>
               <CardContent></CardContent>
-              <CardFooter className="flex-row gap-2">
+              <CardFooter className="flex-row gap-2 py-5">
                 <Button className="bg-green-500 w-fit">Login</Button>
                 <Button variant="outline" className="border-green-500 w-fit">
                   Login with Google
